@@ -11,4 +11,4 @@ const distanciaEmKm = 1580;
 
 const valorDaViagem = (distanciaEmKm/kmPorLitros) * precoCombustivel;
 
-console.log(`O valor dar viagem e R$ ${valorDaViagem.toFixed(2)}`);
+console.log(`O valor da viagem e R$ ${valorDaViagem.toFixed(2)}`);
