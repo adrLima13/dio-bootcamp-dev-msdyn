@@ -26,8 +26,7 @@ function exibirMensagem(tipoPagamento,precoEtiqueta,qtdeVezes){
     }
 };
 
-function main(){
-exibirMensagem(4,300,6)
-};
+(function main(){
+exibirMensagem(4,300,12)
+})();
 
-main()
