@@ -1,0 +1,33 @@
+//Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento.
+//Utilize os códigos da tabela a seguir para ler qual a condição de pagamento escolhida e efetuar o cálculo adequado.
+//Código Condição de pagamento:
+// 1 - À vista Débito, recebe 10% de desconto;
+// 2 - À vista no Dinheiro ou PIX, recebe 15% de desconto;
+// 3 - Em duas vezes, preço normal de etiqueta sem juros;
+// 4 - Acima de duas vezes, preco normal de etiqueta mais juros de 10%;
+
+function aplicarDesconto(valor, desconto){
+    return valor - (valor * (desconto/100));       
+};
+
+function aplicarJuros(valor,juros){
+    return valor + (valor * (juros/100));
+};
+
+function exibirMensagem(tipoPagamento,precoEtiqueta,qtdeVezes){
+    if (tipoPagamento === 1){
+        console.log(`O valor no Debito e com 10% de desconto do produto: R$ ${aplicarDesconto(precoEtiqueta,10).toFixed(2)}`);    
+    } else if(tipoPagamento === 2){        
+        console.log(`O valor no Dinheiro ou PIX e com 15% de desconto do produto: R$ ${aplicarDesconto(precoEtiqueta,15).toFixed(2)}`);    
+    } else if(tipoPagamento === 3){
+            console.log(`O valor no cartao de credito sem desconto e: R$ ${precoEtiqueta.toFixed(2)} em ${qtdeVezes}x de R$ ${(precoEtiqueta/qtdeVezes).toFixed(2)}`);    
+    } else {
+        console.log(`O valor no cartao de credito e com 10% de juros no produto: R$ ${aplicarJuros(precoEtiqueta,10).toFixed(2)} em ${qtdeVezes}x de R$ ${(aplicarJuros(precoEtiqueta,10)/qtdeVezes).toFixed(2)}`);
+    }
+};
+
+function main(){
+exibirMensagem(4,300,6)
+};
+
+main()
